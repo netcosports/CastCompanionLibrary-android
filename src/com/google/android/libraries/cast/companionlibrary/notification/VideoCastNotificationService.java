@@ -49,6 +49,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.media.app.NotificationCompat.MediaStyle;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -342,7 +343,7 @@ public class VideoCastNotificationService extends Service {
                 .setContentText(castingTo)
                 .setContentIntent(getContentIntent(info))
                 .setLargeIcon(bitmap)
-                .setStyle(new NotificationCompat.MediaStyle()
+                .setStyle(new MediaStyle()
                         .setShowActionsInCompactView(mNotificationCompactActionsArray)
                         .setMediaSession(mCastManager.getMediaSessionCompatToken()))
                 .setOngoing(true)
